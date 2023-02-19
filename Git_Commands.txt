@@ -1,0 +1,28 @@
+Git Commands:
+First clone the repo to the local
+. git clone (use url)
+
+git push:
+. git status
+. git add file_name
+. git commit -m "commit message"
+. git push origin branch_name
+
+git pull:
+. git pull 
+. git checkout branch_name
+. git merger branch-to-merge
+
+git merge:
+. git merge 
+
+to see list of files in my branch:
+. git ls-tree -r feature_bhavitha
+
+revert changes:
+. git revert "commit message"
+. git revert commit-hash
+
+delete branch:
+. git branch -D branch_name
+
