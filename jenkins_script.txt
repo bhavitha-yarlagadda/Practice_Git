@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scmGit(branches: [[name: '*/feature_prudhvi']], extensions: [], userRemoteConfigs: [[credentialsId: '5164e0c0-9ad2-453d-b43d-315c01be4bd3', url: 'https://github.com/bhavitha-yarlagadda/Practice_Git.git']])
+            }
+        }
+        stage ('Build') {
+            steps{
+               git branch: 'feature_prudhvi', credentialsId: '5164e0c0-9ad2-453d-b43d-315c01be4bd3', url: 'https://github.com/bhavitha-yarlagadda/Practice_Git.git'
+               bat 'python prudhvi_test.py'
+            }
+        }
+        stage ('test'){
+            steps{
+                echo 'Success'
+            }
+        }
+        
+    }
+}
